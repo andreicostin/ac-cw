@@ -1,0 +1,63 @@
+$our-font: "ProximaNova",'Montserrat', sans-serif;
+$cw-blue: #00a4ff;
+$cw-dark-grey: #4d4f52;
+$cw-light-grey: #f5f5f5;
+$cw-white: #ffffff;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin mobile {
+  @media (max-width: #{$tablet-width - 1}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@function pow($no, $exp) {
+  $noAtPow: 1;
+
+  @if $exp > 0 {
+    @for $i from 1 through $exp {
+      $noAtPow: $noAtPow * $no;
+    }    
+  } @else if $exp < 0 {
+    @for $i from 1 through ($exp * (-1)) {
+      $noAtPow: $noAtPow / $no; 
+    }    
+  }
+  
+  @return $noAtPow;
+}
+
+@function firstMultiple8($no) {
+  @for $i from 1 through 8 {
+    @if (($no + $i) % 8 == 0px) {
+      @return $no + $i;
+    }
+  }
+} 
+
+
+@mixin font($fontsize) {
+  font-size: floor(16px * pow(1.4, $fontsize));
+  line-height: firstMultiple8(floor(16px * pow(1.618, $fontsize)));
+}

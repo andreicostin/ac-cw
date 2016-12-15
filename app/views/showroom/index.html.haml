@@ -1,0 +1,32 @@
+%header.page-header.full-width
+  %div.page-header-container.inner-container
+    %a{ :href => '/', :class => 'header-logo' }
+      %img{ :src => asset_path('white-logo.svg'), :alt => 'Carwow Logo', :width => '150', :height => '35' }
+
+%main.showroom.full-width
+  %header.showroom-header
+    %h1 Your Showroom
+
+  %section.showroom-content.inner-container
+    - @cars.each_with_index do |car|
+      %article.showroom-car.card
+        %a{ :href => '#'}
+          %figure.showroom-car-image
+            %img{ :src => asset_path(car[:image_name]), :alt => car[:make]}
+            %div.showroom-car-overlay
+          %header.showroom-car-header
+            %div.showroom-car-make 
+              =car[:make]
+            %div.showroom-car-model 
+              =car[:model]
+          %section.showroom-car-offer
+            - if car[:has_new_offer]
+              1 new offer
+          %section.showroom-car-info
+            %strong
+              =car[:engine]
+            =car[:details]
+        %a{ :href => '#', :class => 'showroom-car-delete'}
+          
+      
+        

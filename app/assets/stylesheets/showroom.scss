@@ -1,0 +1,107 @@
+@import 'general';
+
+.showroom-header { background-color: $cw-light-grey; padding: 76px 0; text-align: center; box-shadow: 0 1px 0 0 #dddddd; }
+.showroom-content {
+  padding-top: 64px; 
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex; 
+  flex-wrap: wrap;
+  -ms-flex-wrap: wrap; 
+}
+
+.card { border: solid 1px #eeeeee; @include border-radius(6px); box-sizing: border-box; }
+
+.showroom-car { 
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 32px;
+  font-weight: bold;
+  width: 100%;
+    @include mobile {
+      width: 100%;
+    }
+    @include tablet {
+      width: 47.7678571429%; 
+      margin-bottom: 48px;
+      margin-right: 4.464285714285714%;
+
+      &:nth-child(2n+2) { margin-right: 0; }
+    }
+    @include desktop {
+      width: 22.280701754385965%;
+      margin-right: 3.5964912281%;
+      &:nth-child(2n+2) { margin-right: 3.5964912281%; }
+      &:nth-child(4n+4) { margin-right: 0; }
+    }
+}
+
+.showroom-car-overlay { 
+  position: absolute; 
+  left: 0; top: 0;
+  background-image: linear-gradient(124deg, #0a0b0c, rgba(10, 11, 12, 0)); 
+  width: 100%; height: 100%; 
+  @include border-radius(4px); 
+}
+.showroom-car-offer { 
+  background: $cw-blue; 
+  color: $cw-white; 
+  position: absolute; 
+  left: 17px; top: 16px; 
+  padding: 0 15px;
+  @include border-radius(40px); 
+  line-height: 24px; 
+  @include tablet {
+    font-size: .73em;
+  }
+}
+.showroom-car-header { 
+  color: $cw-white; 
+  position: absolute; 
+  left: 17px; top: 66px; 
+  @include tablet {
+    top: 64px;
+  }
+}
+@include tablet {
+  .showroom-car-make {
+    font-size: .82em;
+    line-height: 24px;
+  }
+}
+.showroom-car-model { 
+  font-size: 1.5em;
+  line-height: 1.67;
+  @include tablet {
+    font-size: 1.28em; 
+    line-height: 1.43;
+    letter-spacing: 0;
+  }
+}
+
+.showroom-car-info { 
+  padding: 16px; 
+  line-height: 20px; 
+  font-weight: normal; 
+  letter-spacing: 0px;
+  @include tablet {
+    font-size: .81em;
+  }
+  @include desktop {
+    font-size: .73em;
+  }
+}
+.showroom-car-info strong { display: block; }
+
+.showroom-car-image { position: relative; @include border-radius(4px); }
+.showroom-car-image img { width: 100%; display: block; }
+.showroom-car-delete { 
+  background-image: asset-url('archive_icon.svg'); 
+  background-repeat: no-repeat;
+  width: 32px; height: 32px; 
+  display: block; 
+  position: absolute; 
+  right: 8px; top: 8px; 
+}

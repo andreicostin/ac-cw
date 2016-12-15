@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import 'reset';
+@import 'variables';
+
+
+body { 
+    font-family: $our-font; color: $cw-dark-grey; background: $cw-white; letter-spacing: 1px;
+    @include font(0);
+    @include tablet {
+      @include font(1);
+    }
+}
+
+.full-width { width: 100%; }
+.inner-container { 
+  max-width: 1140px; 
+  margin: 0 auto;
+  width: 90%; 
+  @include tablet { 
+    width: 87.5%;
+  }
+  @include desktop {
+    width: 90%;
+  }
+}
+
+h1 { font-size: 1.82em }
+
+a { color: $cw-dark-grey; text-decoration: none; }
+
+small { font-size: 10px;  }
+
+.page-header { 
+    background-color: $cw-blue; 
+    height: 48px; 
+    @include tablet {
+      height: 72px; 
+    }    
+}
+.header-logo { 
+  display: block; 
+  padding-top: 6px; 
+  @include tablet {
+    padding-top: 15px; 
+  }
+  @include mobile {
+    img {
+      width: 126px;
+    }
+  }
+}
