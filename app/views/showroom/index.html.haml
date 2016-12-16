@@ -25,7 +25,8 @@
           %section.showroom-car-info
             %strong
               =car[:engine]
-            =car[:details]
+            %div.showroom-car-info--details
+              =car[:details]
         %a{ :href => '#', :class => 'showroom-car-delete'}
           
       

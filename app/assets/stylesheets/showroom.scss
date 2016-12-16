@@ -77,7 +77,6 @@
   @include tablet {
     font-size: 1.28em; 
     line-height: 1.43;
-    letter-spacing: 0;
   }
 }
 
@@ -85,7 +84,9 @@
   padding: 16px; 
   line-height: 20px; 
   font-weight: normal; 
-  letter-spacing: 0px;
+}
+.showroom-car-info strong { 
+  display: block; 
   @include tablet {
     font-size: .81em;
   }
@@ -93,7 +94,7 @@
     font-size: .73em;
   }
 }
-.showroom-car-info strong { display: block; }
+.showroom-car-info--details { font-size: .64em; }
 
 .showroom-car-image { position: relative; @include border-radius(4px); }
 .showroom-car-image img { width: 100%; display: block; }
